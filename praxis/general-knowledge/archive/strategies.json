@@ -1,0 +1,83 @@
+{
+  "version": 2,
+  "config": {
+    "selection_method": "weighted",
+    "min_weight": 0.02,
+    "growth_gain_threshold": 0.0,
+    "growth_streak_needed": 3,
+    "prune_weight_threshold": 0.01,
+    "prune_streak_needed": 5,
+    "min_uses_to_prune": 10,
+    "seed_grace_batches": 3,
+    "enable_growth": true,
+    "enable_prune": true,
+    "enable_embedding_novelty": true,
+    "enable_structure_novelty": true,
+    "embedding_similarity_threshold": 0.82
+  },
+  "seed_strategies": [
+    "implications",
+    "rewrite",
+    "extractive_facts",
+    "grounded_exposition"
+  ],
+  "candidate_strategies": [
+    "implications-very-long",
+    "implications-chain-of-thought",
+    "none"
+  ],
+  "state": {
+    "batch_index": 16,
+    "stable_gain_streak": 12,
+    "growth_enabled": true,
+    "low_weight_streaks": {
+      "implications": 0,
+      "rewrite": 0,
+      "extractive_facts": 0,
+      "grounded_exposition": 0
+    }
+  },
+  "strategies": [
+    {
+      "name": "implications",
+      "prompt_key": "implications",
+      "weight": 0.2327642765678672,
+      "stats": {
+        "uses": 34,
+        "mean_reward": 0.10940000000000001
+      },
+      "examples": []
+    },
+    {
+      "name": "rewrite",
+      "prompt_key": "rewrite",
+      "weight": 0.28121541855884213,
+      "stats": {
+        "uses": 19,
+        "mean_reward": 0.20394736842105265
+      },
+      "examples": []
+    },
+    {
+      "name": "extractive_facts",
+      "prompt_key": "extractive-facts",
+      "weight": 0.21716272180128313,
+      "stats": {
+        "uses": 29,
+        "mean_reward": 0.0747103448275862
+      },
+      "examples": []
+    },
+    {
+      "name": "grounded_exposition",
+      "prompt_key": "grounded-exposition",
+      "weight": 0.2688575830720076,
+      "stats": {
+        "uses": 18,
+        "mean_reward": 0.1814777777777778
+      },
+      "examples": []
+    }
+  ],
+  "last_update": "2026-04-13T02:09:12.705820+00:00"
+}

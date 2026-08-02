@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "config": {
+    "selection_method": "weighted",
+    "min_weight": 0.05
+  },
+  "strategies": [
+    {
+      "name": "rule_abstraction",
+      "weight": 0.25,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "augmentation_plan",
+      "weight": 0.25,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "decomposition",
+      "weight": 0.25,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "invariance_hypothesis",
+      "weight": 0.25,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    }
+  ]
+}

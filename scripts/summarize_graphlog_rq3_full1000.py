@@ -1,0 +1,59 @@
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+from typing import Any
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+MODEL_ROWS = [
+    ("Qwen2.5-3B", "graphlog_multiclass_praxis_qwen25_3b_full1000_seed42"),
+    ("Phi-3.5-mini", "graphlog_multiclass_praxis_phi35_mini_full1000_seed42"),
+    ("Llama-3.2-3B", "graphlog_multiclass_praxis_llama32_3b_full1000_seed42"),
+]
+
+
+def pct(value: float | None) -> float | None:
+    return None if value is None else round(100.0 * value, 2)
+
+
+def row_from_result(model_label: str, exp_dir: Path) -> dict[str, Any]:
+    path = exp_dir / "final_results.json"
+    if not path.exists():
+        return {"dataset": "GraphLog", "model": model_label, "status": "missing", "path": str(path)}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        "dataset": "GraphLog",
+        "model": model_label,
+        "status": "ok",
+        "n": data.get("n"),
+        "initial": pct(data.get("baseline_accuracy")),
+        "final": pct(data.get("adapter_accuracy")),
+        "gain": pct(data.get("gain")),
+        "pgr": pct(data.get("pgr")),
+        "dr": pct(data.get("dr")),
+        "time": round(float(data.get("time_per_example_seconds", 0.0)), 4),
+        "path": str(path),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--results_root", default="analysis_results/rq3_crossmodel_full1000/graphlog_multiclass")
+    parser.add_argument("--out", default="analysis_results/rq3_crossmodel_full1000/graphlog_rq3_model_family_table.json")
+    args = parser.parse_args()
+
+    results_root = REPO_ROOT / args.results_root
+    rows = [row_from_result(label, results_root / dirname) for label, dirname in MODEL_ROWS]
+    summary = {"dataset": "GraphLog", "protocol": "rq3_model_family_full1000_multiclass_praxis", "rows": rows}
+
+    out = REPO_ROOT / args.out
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == "__main__":
+    main()

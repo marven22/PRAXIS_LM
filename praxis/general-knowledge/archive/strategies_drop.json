@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "config": {
+    "selection_method": "operation_routed",
+    "min_weight": 0.02,
+    "enable_growth": false,
+    "enable_prune": false
+  },
+  "seed_strategies": [
+    "count_and_enumerate",
+    "arithmetic_derivation",
+    "comparison_resolution",
+    "temporal_event_order",
+    "entity_reference_resolution"
+  ],
+  "candidate_strategies": [],
+  "state": {
+    "batch_index": 2,
+    "stable_gain_streak": 2,
+    "growth_enabled": false,
+    "low_weight_streaks": {
+      "count_and_enumerate": 0,
+      "arithmetic_derivation": 0,
+      "comparison_resolution": 0,
+      "temporal_event_order": 0,
+      "entity_reference_resolution": 0
+    }
+  },
+  "strategies": [
+    {
+      "name": "count_and_enumerate",
+      "prompt_key": "count-and-enumerate",
+      "weight": 0.2749547168081708,
+      "stats": {
+        "uses": 3,
+        "mean_reward": 0.20833333333333331
+      },
+      "examples": []
+    },
+    {
+      "name": "arithmetic_derivation",
+      "prompt_key": "arithmetic-derivation",
+      "weight": 0.18126132079795731,
+      "stats": {
+        "uses": 2,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "comparison_resolution",
+      "prompt_key": "comparison-resolution",
+      "weight": 0.18126132079795731,
+      "stats": {
+        "uses": 5,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "temporal_event_order",
+      "prompt_key": "temporal-event-order",
+      "weight": 0.18126132079795731,
+      "stats": {
+        "uses": 2,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "entity_reference_resolution",
+      "prompt_key": "entity-reference-resolution",
+      "weight": 0.18126132079795731,
+      "stats": {
+        "uses": 3,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    }
+  ],
+  "last_update": "2026-07-09T14:05:53.545285+00:00"
+}

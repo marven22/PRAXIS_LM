@@ -1,0 +1,50 @@
+.env
+.env.*
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Datasets and generated experiment artifacts
+data/
+datasets/
+results/
+analysis_results/
+logs/
+outputs/
+trainer_output/
+runpod_results/
+wandb/
+
+# Model and adapter artifacts
+models/
+loras/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+*.onnx
+
+# Archives, paper drafts, and scratch files
+*.zip
+*.tar
+*.tar.gz
+*.pdf
+*.docx
+*.aux
+*.bbl
+*.blg
+*.log
+
+# Local editor/OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

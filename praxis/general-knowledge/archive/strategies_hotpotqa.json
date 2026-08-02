@@ -1,0 +1,157 @@
+{
+  "version": 2,
+  "config": {
+    "selection_method": "weighted",
+    "min_weight": 0.02,
+    "growth_gain_threshold": 0.0,
+    "growth_streak_needed": 3,
+    "prune_weight_threshold": 0.01,
+    "prune_streak_needed": 5,
+    "min_uses_to_prune": 10,
+    "seed_grace_batches": 3,
+    "enable_growth": true,
+    "enable_prune": true,
+    "enable_embedding_novelty": true,
+    "enable_structure_novelty": true,
+    "embedding_similarity_threshold": 0.82
+  },
+  "seed_strategies": [
+    "supporting_fact_extraction",
+    "bridge_entity_chain",
+    "comparison_table",
+    "question_aware_evidence_selection",
+    "multi_hop_explanation",
+    "answer_oriented_summary",
+    "bridge_step_reasoning",
+    "answer_bearing_fact",
+    "multi_hop_qa_rehearsal",
+    "question_decomposition"
+  ],
+  "candidate_strategies": [
+    "extractive-facts",
+    "grounded-exposition",
+    "rewrite",
+    "implications",
+    "none"
+  ],
+  "state": {
+    "batch_index": 0,
+    "stable_gain_streak": 0,
+    "growth_enabled": true,
+    "low_weight_streaks": {
+      "supporting_fact_extraction": 0,
+      "bridge_entity_chain": 0,
+      "comparison_table": 0,
+      "question_aware_evidence_selection": 0,
+      "multi_hop_explanation": 0,
+      "answer_oriented_summary": 0,
+      "bridge_step_reasoning": 0,
+      "answer_bearing_fact": 0,
+      "multi_hop_qa_rehearsal": 0,
+      "question_decomposition": 0
+    }
+  },
+  "strategies": [
+    {
+      "name": "supporting_fact_extraction",
+      "prompt_key": "supporting-fact-extraction",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "bridge_entity_chain",
+      "prompt_key": "bridge-entity-chain",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "comparison_table",
+      "prompt_key": "comparison-table",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "question_aware_evidence_selection",
+      "prompt_key": "question-aware-evidence-selection",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "multi_hop_explanation",
+      "prompt_key": "multi-hop-explanation",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "answer_oriented_summary",
+      "prompt_key": "answer-oriented-summary",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "bridge_step_reasoning",
+      "prompt_key": "bridge-step-reasoning",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "answer_bearing_fact",
+      "prompt_key": "answer-bearing-fact",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "multi_hop_qa_rehearsal",
+      "prompt_key": "multi-hop-qa-rehearsal",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    },
+    {
+      "name": "question_decomposition",
+      "prompt_key": "question-decomposition",
+      "weight": 0.1,
+      "stats": {
+        "uses": 0,
+        "mean_reward": 0.0
+      },
+      "examples": []
+    }
+  ],
+  "last_update": null
+}
